@@ -1,0 +1,30 @@
+{
+  "name": "vibescribe",
+  "version": "1.0.0",
+  "description": "Cerebras x Cline Hackathon MVP for AI audio transcription using Qwen3 Coder and Deepgram",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@deepgram/sdk": "^3.13.0",
+    "dotenv": "^17.2.1",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "deepgram",
+    "audio",
+    "transcription",
+    "hackathon"
+  ],
+  "author": "Hackathon Team",
+  "license": "MIT"
+}

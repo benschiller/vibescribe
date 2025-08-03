@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeScribe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VibeScribe</h1>
+            <p>Upload an audio file to get instant transcription</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div id="drop-area" class="drop-area">
+                    <div class="drop-content">
+                        <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>Drag & drop your audio file here</p>
+                        <p class="or-text">or</p>
+                        <button id="browse-btn" class="browse-btn">Browse Files</button>
+                    </div>
+                    <input type="file" id="file-input" accept="audio/*" style="display: none;">
+                </div>
+
+                <div id="upload-status" class="upload-status" style="display: none;">
+                    <div class="status-content">
+                        <div class="spinner"></div>
+                        <p id="status-text">Processing your audio file...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Vibecoded for the Cerebras x Cline Hackathon with Qwen3 Coder and built on Deepgram</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

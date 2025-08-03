@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeScribe Transcript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VibeScribe</h1>
+            <p>Your transcription results</p>
+        </header>
+
+        <main>
+            <div id="processing-section" class="processing-section">
+                <div class="status-content">
+                    <div class="spinner"></div>
+                    <p id="processing-text">Processing your audio file...</p>
+                </div>
+            </div>
+
+            <div id="result-section" class="transcription-section" style="display: none;">
+                <div class="section-header">
+                    <!-- <h2>Transcription Result</h2> -->
+                    <div class="actions">
+                        <button id="download-btn" class="action-btn">Download Transcript</button>
+                        <!-- HIDE ADDITIONAL BUTTONS -->
+                        <!-- <button id="edit-btn" class="action-btn">Edit Text</button>
+                        <button id="back-btn" class="action-btn secondary">Upload Another</button> -->
+                    </div>
+                </div>
+                <textarea id="transcription-result" class="transcription-result" placeholder="Your transcription will appear here..." readonly></textarea>
+            </div>
+        </main>
+
+        <footer>
+            <p>Vibecoded for the Cerebras x Cline Hackathon with Qwen3 Coder and built on Deepgram</p>
+        </footer>
+    </div>
+
+    <script src="transcript.js"></script>
+</body>
+</html>
