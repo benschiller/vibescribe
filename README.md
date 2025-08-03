@@ -40,18 +40,23 @@ Transform your audio files into accurate text transcriptions with our AI-powered
    npm install
    ```
 
-3. **Deploy to get webhook URL** (Required first)
-   ```bash
-   # Push to GitHub and deploy to Vercel to get your PUBLIC_URL
-   # Or use ngrok for local development: ngrok http 3000
-   ```
-
-4. **Set up environment variables**
+3. **Set up environment variables**
    ```bash
    # Create .env file with your keys
    echo "DEEPGRAM_API_KEY=your_deepgram_api_key_here" > .env
    echo "PORT=3000" >> .env
-   echo "PUBLIC_URL=https://your-vercel-app.vercel.app" >> .env
+   echo "PUBLIC_URL=https://your-ngrok-url.ngrok-free.app" >> .env
+   ```
+
+4. **Set up ngrok for webhooks** (Required for Deepgram callbacks)
+   ```bash
+   # Install ngrok globally if you haven't already
+   npm install -g ngrok
+   
+   # In a separate terminal, expose your local server
+   ngrok http 3000
+   
+   # Copy the https URL and update your .env PUBLIC_URL
    ```
 
 5. **Start the development server**
@@ -68,12 +73,13 @@ Create a `.env` file in the root directory:
 ```env
 DEEPGRAM_API_KEY=your_deepgram_api_key_here
 PORT=3000
-PUBLIC_URL=https://your-vercel-app.vercel.app
+PUBLIC_URL=https://your-ngrok-url.ngrok-free.app
 ```
 
-### Development Options
-- **Option 1**: Deploy to Vercel first, then develop locally with that webhook URL
-- **Option 2**: Use ngrok (`ngrok http 3000`) and set PUBLIC_URL to the ngrok URL
+### Development Setup
+- **Use ngrok** for webhook development: `ngrok http 3000`
+- **Set PUBLIC_URL** to your ngrok HTTPS URL in the `.env` file
+- **Restart server** after updating PUBLIC_URL for changes to take effect
 
 ## 🏗️ Architecture
 
@@ -136,7 +142,6 @@ This project was **entirely built using AI assistance** as part of the Cerebras 
 - **Webhook-based processing** for handling large audio files
 - **Real-time status updates** with elegant loading states
 - **Glassmorphism design** for modern visual appeal
-- **Stateless architecture** perfect for serverless deployment
 
 ## 🙏 Acknowledgments
 
